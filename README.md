@@ -2,9 +2,13 @@
 ## About / Synopsis
 
 This plugin demonstrates how to contribute a custom **migration** to the **Migration Service**.
+
 It can happen that you need to change the data type of a document property e.g. from `Integer` to `String`. Directly changing the data type of a document property is strongly discouraged because the **Nuxeo Platform** does not check if document properties had their data type changed in the Nuxeo model therefore it does not change the data type of the document property in the document repository, which can lead to major issues in your application.
+
 The recommended way to migrate a document property is to actually define a new document property with the desired data type and copy the value of the document property to it, with some conversion if necessary.
+
 After the migration has been performed, the old document property, being unused, can be removed from the Nuxeo mdel.
+
 This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulka Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
 
 **TODO**  Configuration variables
