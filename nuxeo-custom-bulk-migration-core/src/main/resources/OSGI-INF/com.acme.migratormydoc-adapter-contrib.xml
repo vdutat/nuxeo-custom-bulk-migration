@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<component name="com.acme.migrator.adapters.mydoc">
+
+  <extension target="org.nuxeo.ecm.core.api.DocumentAdapterService" point="adapters">
+    <adapter class="com.acme.migrator.MyDocAdapter" factory="com.acme.migrator.MyDocAdapterFactory"/>
+  </extension>
+
+</component>

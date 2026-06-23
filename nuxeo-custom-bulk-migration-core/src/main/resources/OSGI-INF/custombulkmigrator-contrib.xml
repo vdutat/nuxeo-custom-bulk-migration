@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<component name="com.acme.migrator.custombulkmigrator">
+
+  <extension target="org.nuxeo.runtime.migration.MigrationService" point="configuration">
+
+    <migration id="basic-bulk-migration">
+      <description label="migration.basic.bulk">Integer Property Bulk Migration</description>
+      <class>com.acme.migrator.IntegerToStringPropBulkMigrator</class>
+      <defaultState>before</defaultState>
+      <state id="before">
+        <description label="migration.basic.before">before basic migration state</description>
+      </state>
+      <state id="after">
+        <description label="migration.basic.after">after basic migration state</description>
+      </state>
+      <step id="before-to-after" fromState="before" toState="after">
+        <description label="migration.basic.before-to-after">Migrate basic state from before to after</description>
+      </step>
+    </migration>
+
+  </extension>
+
+</component>

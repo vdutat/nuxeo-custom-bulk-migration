@@ -1,0 +1,8 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: com.acme.migrator
+Bundle-Version: 1.0.0
+Bundle-Name: nuxeo-custom-bulk-migration-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.acme.migrator.nuxeo-custom-bulk-migration-core.test;singleton=true
