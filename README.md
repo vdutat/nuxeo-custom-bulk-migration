@@ -17,9 +17,22 @@ In summary, the main steps in a migration are:
 1. deploy the Nuxeo model
 1. remove the unused property from the document repository
 
-This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulka Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
+This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulk Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
 
 **TODO** Configuration variables
+This migration can be configured to migrate other properties in documents of another document type using the following configuration variables to set in your `nuxeo.conf` file:
+- NXQL query to retrieve the documents to migrate:
+```
+acme.migrator.basic-bulk-migration.nxql=SELECT * FROM Document WHERE ecm:isVersion=0 AND ecm:primaryType='YourDocumentType'
+```
+- name of the origin integer property:
+```
+acme.migrator.basic-bulk-migration..intergerPropName=yourdoctype:prop1
+```
+- name of the destination string property:
+```
+acme.migrator.basic-bulk-migration..stringPropName=yourdoctype:prop1
+```
 
 **TODO** How to launch and check status of migration
 
