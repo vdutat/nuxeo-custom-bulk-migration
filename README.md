@@ -5,13 +5,25 @@ This plugin demonstrates how to contribute a custom **migration** to the **Migra
 
 It can happen that you need to change the data type of a document property e.g. from `Integer` to `String`. Directly changing the data type of a document property is strongly discouraged because the **Nuxeo Platform** does not check if document properties had their data type changed in the Nuxeo model therefore it does not change the data type of the document property in the document repository, which can lead to major issues in your application.
 
-The recommended way to migrate a document property is to actually define a new document property with the desired data type and copy the value of the document property to it, with some conversion if necessary.
+The recommended way to migrate a document property is to actually define a new document property in the document definition with the desired data type and copy the value of the document property to it, with some conversion if necessary.
 
-After the migration has been performed, the old document property, being unused, can be removed from the Nuxeo mdel.
+After the migration has been performed, the old document property, being unused, can be removed from the Nuxeo mdel and removed from the document repository.
+
+In summary, the main steps in a migration are:
+1. define the new document property in the Nuxeo model, the migration process, and the new Elasticsearch mapping. Update all processes and UI related to the origin document property
+1. deploy the Nuxeo model
+1. perform the migration and a full ES re-indexing (required because of the new mapping)
+1. remove the unused origin document property from the Nuxeo model
+1. deploy the Nuxeo model
+1. remove the unused property from the document repository
 
 This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulka Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
 
-**TODO**  Configuration variables
+**TODO** Configuration variables
+
+**TODO** How to launch and check status of migration
+
+This custom migratrion uses the **Nuxeo Stream** named `bulk/migration` and the **Stream processor** named `migration`.
 
 This plugin was generated with the following commands:
 ```
