@@ -50,7 +50,7 @@ acme.migrator.basic-bulk-migration..stringPropName=yourdoctype:prop2
 
 This custom migratrion uses the **Nuxeo Stream** named `bulk/migration` and the **Stream processor** named `migration`.
 
-Before run the migration, check if it is deployed:
+Before running the migration, check if it is deployed:
 ```
 curl -su Administrator:Administrator \
 http://localhost:8080/nuxeo/api/v1/management/migration/basic-bulk-migration
