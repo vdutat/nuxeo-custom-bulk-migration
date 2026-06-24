@@ -19,7 +19,17 @@ In summary, the main steps in a migration are:
 
 This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulk Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
 
-**TODO** Configuration variables
+This plugin was generated with the following commands:
+```
+mkdir nuxeo-custom-bulk-migration && cd $_
+nuxeo b multi-module contribution
+# Edit contribution's XML file, java class, and test java class
+nuxeo b package
+mvn clean install
+```
+
+## Configuration variables
+
 This migration can be configured to migrate other properties in documents of another document type using the following configuration variables to set in your `nuxeo.conf` file:
 - NXQL query to retrieve the documents to migrate:
 ```
@@ -31,21 +41,14 @@ acme.migrator.basic-bulk-migration..intergerPropName=yourdoctype:prop1
 ```
 - name of the destination string property:
 ```
-acme.migrator.basic-bulk-migration..stringPropName=yourdoctype:prop1
+acme.migrator.basic-bulk-migration..stringPropName=yourdoctype:prop2
 ```
 
-**TODO** How to launch and check status of migration
+## How to launch and check status of migration
+
+**TODO**
 
 This custom migratrion uses the **Nuxeo Stream** named `bulk/migration` and the **Stream processor** named `migration`.
-
-This plugin was generated with the following commands:
-```
-mkdir nuxeo-custom-bulk-migration && cd $_
-nuxeo b multi-module contribution
-# Edit contribution's XML file, java class, and test java class
-nuxeo b package
-mvn clean install
-```
 
 ## Table of contents
 
