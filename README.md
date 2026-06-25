@@ -22,7 +22,7 @@ It can happen that you need to change the data type of a document property e.g. 
 
 The recommended way to migrate a document property is to actually define a new document property in the document definition with the desired data type and copy the value of the document property to it, with some conversion if necessary.
 
-After the migration has been performed, the old document property, being unused, can be removed from the Nuxeo mdel and removed from the document repository.
+After the migration has been performed, the old document property, being unused, can be removed from the Nuxeo model and removed from the document repository.
 
 In summary, the main steps in a migration are:
 1. define the new document property in the Nuxeo model, the migration process, and the new Elasticsearch mapping. Update all processes and UI related to the origin document property
