@@ -1,4 +1,19 @@
 # nuxeo-custom-bulk-migration
+
+## Table of contents
+
+> * [nuxeo-custom-bulk-migration](#nuxeo-custom-bulk-migration)
+>   * [Table of contents](#table-of-contents)
+>   * [About / Synopsis](#about--synopsis)
+>   * [Configuration variables](#configuration-variables)
+>   * [How to launch and check status of migration](#how-to-launch-and-check-status-of-migration)
+>   * [Requirements](#requirements)
+>   * [Build](#build)
+>   * [Installation](#installation)
+>   * [Support](#support)
+>   * [License](#license)
+>   * [About Hyland Nuxeo](#about-hyland-nuxeo)
+
 ## About / Synopsis
 
 This plugin demonstrates how to contribute a custom **migration** to the **Migration Service**.
@@ -12,7 +27,7 @@ After the migration has been performed, the old document property, being unused,
 In summary, the main steps in a migration are:
 1. define the new document property in the Nuxeo model, the migration process, and the new Elasticsearch mapping. Update all processes and UI related to the origin document property
 1. deploy the Nuxeo model
-1. perform the migration and a full ES re-indexing (required because of the new mapping)
+1. perform the migration followed by a full ES re-indexing (required because of the new mapping)
 1. remove the unused origin document property from the Nuxeo model
 1. deploy the Nuxeo model
 1. remove the unused property from the document repository
@@ -46,8 +61,6 @@ acme.migrator.basic-bulk-migration..stringPropName=yourdoctype:prop2
 
 ## How to launch and check status of migration
 
-**TODO**
-
 This custom migratrion uses the **Nuxeo Stream** named `bulk/migration` and the **Stream processor** named `migration`.
 
 Before running the migration, check if it is deployed:
@@ -67,17 +80,6 @@ Check migration status:
 curl -su Administrator:Administrator \
 http://localhost:8080/nuxeo/api/v1/management/migration/basic-bulk-migration
 ```
-
-## Table of contents
-
-> * [nuxeo-custom-bulk-migration](#nuxeo-custom-bulk-migration)
->   * [About / Synopsis](#about--synopsis)
->   * [Table of contents](#table-of-contents)
->   * [Installation](#installation)
->   * [Requirements](#requirements)
->   * [Build](#build)
->   * [License](#license)
->   * [About Hyland Nuxeo](#about-hyland-nuxeo)
 
 ## Requirements
 
