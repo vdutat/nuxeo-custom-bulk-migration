@@ -30,7 +30,7 @@ In summary, the main steps in a migration are:
 1. perform the migration followed by a full ES re-indexing (required because of the new mapping)
 1. remove the unused origin document property from the Nuxeo model
 1. deploy the Nuxeo model
-1. remove the unused property from the document repository
+1. remove the unused property from documents in the document repository
 
 This custom **migration** shows how to migrate the value of an `Integer` document property to a `String` document property using the **Bulk Action Framework**. It copy the value of document property `mydoc:intprop` to document property `mydoc:stringprop` in documents of type `MyDoc`.
 
